@@ -38,17 +38,17 @@ const useImage = (img) => {
 }
 
 
-var currTime = 30;
-var hour = 0
+var currTime = 0;
+var minute = 0
 var cycle = 0
 const  timeAgo =  () => {
     const toAdd = 5;
     currTime = currTime + toAdd
     //reset currTime
-    currTime >= 60 && (currTime = 0, cycle += 1, hour += 1)
-    currTime === 10 || currTime === 30 && cycle < 1 ? $('.showTime').html(`${currTime} seconds ago . . .`):
+    currTime >= 60 && (currTime = 0, cycle += 1, minute += 1)
+    currTime === 30 && cycle === 0 ? $('.showTime').html(`${currTime} seconds ago . . .`):
         ( 
-            cycle > 1 && $('.showTime').html(hour < 1? `an hour ago. . .`: `${hour} hours ago . . .`)
+            cycle >= 1 && $('.showTime').html(minute < 2? `a minute ago. . .`: `${minute} minutes ago . . .`)
         )
    
     console.log(cycle, currTime)
