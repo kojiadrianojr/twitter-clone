@@ -50,8 +50,6 @@ const  timeAgo =  () => {
         ( 
             cycle >= 1 && $('.showTime').html(minute < 2? `a minute ago. . .`: `${minute} minutes ago . . .`)
         )
-   
-    console.log(cycle, currTime)
     setTimeout(timeAgo,5000)
 }
 
